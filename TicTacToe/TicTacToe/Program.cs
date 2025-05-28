@@ -34,15 +34,20 @@ namespace CSharpEducation
                     gameField[step - 1] = player;
                     count++;
 
-                    if (CheckWin(gameField)) isWin = true;
-                    else if (count == 9) isDraw = true;
-                    else player = SwapPLayer(player);
+                    if (CheckWin(gameField)) 
+                        isWin = true;
+                    else if (count == 9) 
+                        isDraw = true;
+                    else 
+                        player = SwapPLayer(player);
 
                 }
                 PrintField(gameField);
 
-                if (isWin) Console.WriteLine("Победа " + player + "!");
-                else Console.WriteLine("Ничья!");
+                if (isWin) 
+                    Console.WriteLine("Победа " + player + "!");
+                else 
+                    Console.WriteLine("Ничья!");
             }
             else
             {
@@ -68,11 +73,15 @@ namespace CSharpEducation
         static bool CheckWin(char[] gameField)
         {
             for (int i = 0; i < 9; i += 3)
-                if (gameField[i] == gameField[i + 1] && gameField[i] == gameField[i + 2]) return true;
+                if (gameField[i] == gameField[i + 1] && gameField[i] == gameField[i + 2]) 
+                    return true;
             for (int i = 0; i < 3; i++)
-                if (gameField[i] == gameField[i + 3] && gameField[i] == gameField[i + 6]) return true;
-            if (gameField[0] == gameField[4] && gameField[4] == gameField[8]) return true;
-            if (gameField[2] == gameField[4] && gameField[4] == gameField[6]) return true;
+                if (gameField[i] == gameField[i + 3] && gameField[i] == gameField[i + 6]) 
+                    return true;
+            if (gameField[0] == gameField[4] && gameField[4] == gameField[8]) 
+                return true;
+            if (gameField[2] == gameField[4] && gameField[4] == gameField[6]) 
+                return true;
             return false;
         }
 
@@ -83,15 +92,18 @@ namespace CSharpEducation
                 if (gameField[step - 1] == X || gameField[step - 1] == O)
                     return false;
             }
-            else return false;
+            else 
+                return false;
 
             return true;
         }
 
         static char SwapPLayer(char player)
         {
-            if (player == X) return O;
-            else return X;
+            if (player == X) 
+                return O;
+            else 
+                return X;
         }
     }
 }
