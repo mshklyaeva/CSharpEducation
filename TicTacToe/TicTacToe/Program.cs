@@ -5,6 +5,7 @@ namespace CSharpEducation
     public class Program
     {
         const string line = "-------------";
+        const char X = 'X', O = 'O';
         static void Main(string[] args)
         {
             var gameField = new[] { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
@@ -12,7 +13,7 @@ namespace CSharpEducation
             int step, count = 0;
 
             Console.Write("Начать игру? (y,n) ");
-            char start = Convert.ToChar(Console.ReadLine()), player = 'X';
+            char start = Convert.ToChar(Console.ReadLine()), player = X;
 
             if (start == 'y')
             {
@@ -79,7 +80,7 @@ namespace CSharpEducation
         {
             if (isNumber && step > 0 && step < 10)
             {
-                if (gameField[step - 1] == 'X' || gameField[step - 1] == 'O')
+                if (gameField[step - 1] == X || gameField[step - 1] == O)
                     return false;
             }
             else return false;
@@ -89,10 +90,8 @@ namespace CSharpEducation
 
         static char SwapPLayer(char player)
         {
-            if (player == 'X') return 'O';
-            else return 'X';
+            if (player == X) return O;
+            else return X;
         }
-
-        
     }
 }
