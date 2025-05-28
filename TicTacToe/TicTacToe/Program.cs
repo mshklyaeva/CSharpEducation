@@ -4,6 +4,7 @@ namespace CSharpEducation
 {
     public class Program
     {
+        const string line = "-------------";
         static void Main(string[] args)
         {
             var gameField = new[] { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
@@ -50,7 +51,7 @@ namespace CSharpEducation
         static void PrintField(char[] gameField)
         {
             int index = 0; 
-            Console.WriteLine("-------------");
+            Console.WriteLine(line);
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
@@ -59,7 +60,7 @@ namespace CSharpEducation
                     index++;
                 }
                 Console.WriteLine("|");
-                Console.WriteLine("-------------");
+                Console.WriteLine(line);
             }
         }
 
