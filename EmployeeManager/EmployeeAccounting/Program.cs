@@ -10,14 +10,12 @@ namespace EmployeeAccounting
     {
         public static void Main(string[] args)
         {
-            EmployeeAccountingSistem sistem = new EmployeeAccountingSistem();
+            EmployeeAccountingSystem system = new EmployeeAccountingSystem();
 
             string menuPoint = "0";
 
             while (menuPoint != "6")
             {
-                //Console.Clear();
-
                 Console.WriteLine("Выберите нужный пункт меню:\n" +
                 "1. Добавить нового сотрудника\n" +
                 "2. Обновить информацию о сотруднике\n" +
@@ -31,19 +29,19 @@ namespace EmployeeAccounting
                 switch (menuPoint)
                 {
                     case "1":
-                        sistem.AddNewEmployee();
+                        system.AddNewEmployee();
                         break;
                     case "2":
-                        sistem.UpdateEmployee();
+                        system.UpdateEmployee();
                         break;
                     case "3":
-                        sistem.GetEmployeeInformation();
+                        system.GetEmployeeInformation();
                         break;
                     case "4":
-                        sistem.DeleteEmployee();
+                        system.DeleteEmployee();
                         break;
                     case "5":
-                        sistem.CalculateEmployeeSalary();
+                        system.CalculateEmployeeSalary();
                         break;
                     case "6":
                         Console.WriteLine("Выход!");
