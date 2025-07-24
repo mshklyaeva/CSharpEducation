@@ -14,6 +14,23 @@ namespace EmployeeAccounting
     /// </summary>
     public class EmployeeAccountingSystem
     {
+        #region Константы
+        /// <summary>
+        /// Выбор пользователя, если он хочет ответить "Yes" - да
+        /// </summary>
+        public const string Y = "y";
+
+        /// <summary>
+        /// Выбор пользователем первого пункта меню
+        /// </summary>
+        public const string Type1 = "1";
+
+        /// <summary>
+        /// Выбор пользователем второго пункта меню
+        /// </summary>
+        public const string Type2 = "2";
+        #endregion
+
         #region Поля и свойства
         /// <summary>
         /// Список всех добавленных сотрудников.
@@ -41,7 +58,7 @@ namespace EmployeeAccounting
 
                 string type = Console.ReadLine();
 
-                if (type == "1")
+                if (type == Type1)
                 {
                     Console.WriteLine("Введите оклад сотрудника (например, 50450,5): ");
                     var isDecimal = decimal.TryParse(Console.ReadLine(), out decimal salary);
@@ -57,7 +74,7 @@ namespace EmployeeAccounting
                     break;
 
                 }
-                else if (type == "2")
+                else if (type == Type2)
                 {
                     Console.WriteLine("Введите почасовую ставку сотрудника (например, 150,5): ");
                     var isDecimal = decimal.TryParse(Console.ReadLine(), out decimal hourlyRate);
@@ -136,7 +153,7 @@ namespace EmployeeAccounting
                 Console.WriteLine("Хотите обновить имя сотрудника? y/n ");
                 var choice = Console.ReadLine();
 
-                if (choice == "y")
+                if (choice == Y)
                 {
                     Console.WriteLine("Введите новое имя сотрудника");
                     newName = Console.ReadLine();
@@ -153,7 +170,7 @@ namespace EmployeeAccounting
                     Console.WriteLine("Хотите обновить почасовую ставку сотрудника? y/n ");
                     choice = Console.ReadLine();
 
-                    if (choice == "y")
+                    if (choice == Y)
                     {
                         Console.WriteLine("Введите новую почасовую ставку сотрудника");
                         var isDecimal = decimal.TryParse(Console.ReadLine(), out newBaseSalary);
@@ -174,7 +191,7 @@ namespace EmployeeAccounting
                     Console.WriteLine("Хотите обновить оклад сотрудника? y/n ");
                     choice = Console.ReadLine();
 
-                    if (choice == "y")
+                    if (choice == Y)
                     {
                         Console.WriteLine("Введите новый оклад сотрудника");
                         var isDecimal = decimal.TryParse(Console.ReadLine(), out newBaseSalary);

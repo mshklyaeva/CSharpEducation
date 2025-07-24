@@ -68,7 +68,7 @@ namespace EmployeeAccounting
                 var employee = GetById(id);
 
                 Console.WriteLine("Информация о сотруднике:");
-                Console.WriteLine(employee.ToString() + $"| фиксированная часть зарплаты: {employee.BaseSalary}");
+                Console.WriteLine(employee.ToString() + $" | фиксированная часть зарплаты: {employee.BaseSalary}");
             }
             catch
             {
